@@ -5,6 +5,7 @@ from sqlalchemy import DateTime, Float, ForeignKey, String
 from sqlalchemy.orm import column_property, mapped_column, relationship
 
 from core.database import Base
+
 # stupid solution for sqlalchemy.exc.NoReferencedTableError
 from models.market import MarketCoinsDatabase
 
@@ -42,7 +43,6 @@ class PortfolioDatabase(Base):
         "PortfolioCoinsDatabase",
         back_populates="portfolio",
         cascade="all, delete-orphan",
-        # lazy="joined",
     )
 
 
