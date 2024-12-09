@@ -22,7 +22,7 @@ pip install -r src/requirements.txt
 #### 2. Prepare .env file
 
 - Create `.env` file in root dir
-- Paste env vars from `.env.example`
+- Paste from `.env.example` into `.env`
 
 ```bash
 DATABASE_PATH=90c3a95f43fa187c6e7a9d2ff319e5ae05ff77f4.db
@@ -45,7 +45,7 @@ COINGECKO_API_KEY=
 #### 3. Prepare database
 
 ```bash
-python src/prepare.py
+cd src && python prepare.py
 ```
 
 #### 4. Run
