@@ -10,12 +10,12 @@ from core.database import async_session
 from models.controllers.market import MarketCoinsController
 
 
-async def update_market_data() -> None:
+async def update_market_data(initial: bool = False) -> None:
     client = CoinGeckoV3Client(api_key=CoinGecko.api_key.to_string())
     session = async_session()
     market_coins_controller = MarketCoinsController(session)
     market_coins = await market_coins_controller.get_all()
-    coins_pages = (len(market_coins) // 250) + 1
+    coins_pages = (len(market_coins) // 250) + (1 if not initial else 30)
 
     async def fetch_market_coins(page: int) -> list[dict]:
         async with asyncio.Semaphore(30):

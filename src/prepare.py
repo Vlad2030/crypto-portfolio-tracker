@@ -3,16 +3,16 @@ import uuid
 
 import dotenv
 
-from src.core.data import Config, Database
-from src.core.database import async_create_all, async_session
-from src.models.controllers.market import MarketCoinsController
-from src.models.controllers.portfolio import PortfolioController
-from src.tasks.coins import update_market_data
+from core.data import Config, Database
+from core.database import async_create_all, async_session
+from models.controllers.market import MarketCoinsController
+from models.controllers.portfolio import PortfolioController
+from tasks.coins import update_market_data
 
 
 async def main() -> None:
     await async_create_all()
-    await update_market_data()
+    await update_market_data(initial=True)
 
     session = async_session()
     portfolio_controller = PortfolioController(session)
