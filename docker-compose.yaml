@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+    tracker:
+        container_name: crypto-portfolio-tracker
+        build: ./src
+        command: python ./main.py
+        env_file:
+            - .env
+        restart: always
+        deploy:
+            restart_policy:
+                condition: on-failure
+                delay: 5s
+                max_attempts: 3
+        volumes:
+            - ./${DATABASE_PATH}:/crypto-portfolio-tracker/${DATABASE_PATH}

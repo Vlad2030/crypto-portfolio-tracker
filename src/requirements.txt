@@ -1,0 +1,10 @@
+aiocron==1.8
+aiogram==3.2.0
+aiohttp==3.9.0
+aiosqlite==0.20.0
+asyncio==3.4.3
+ciso8601==2.3.1
+loguru==0.7.2
+orjson==3.9.10
+python-dotenv==1.0.0
+SQLAlchemy==2.0.9
