@@ -1,6 +1,6 @@
 # Crypto portfolio tracker
 
-![telegram message](.message.png)
+![telegram message](message.png)
 
 ## Getting started
 
